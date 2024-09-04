@@ -14,7 +14,7 @@ public class BinarySearch {
      * @param target
      * @return index of the target or -1
      */
-    private int binarySearch(int[] array, int target) {
+    public int binarySearch(int[] array, int target) {
         if (array == null) {
             return -1;
         }
