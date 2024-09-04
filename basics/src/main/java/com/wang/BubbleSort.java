@@ -8,7 +8,8 @@ public class BubbleSort {
         int[] array = {1, 2, 3, 4, 5, 7};
 //        new BubbleSort().bubbleSort(array);
 //        new BubbleSort().bubbleSort_v2(array);
-        new BubbleSort().bubbleSort_v3(array);
+//        new BubbleSort().bubbleSort_v3(array);
+        new BubbleSort().bubbleSort_v4(array);
     }
 
 
@@ -61,6 +62,27 @@ public class BubbleSort {
                 break;
             }
             System.out.println("Epoch " + (i+1) + ":" + Arrays.toString(array));
+        }
+    }
+
+    /**
+     * reduce compare times using last swap index
+     */
+    public void bubbleSort_v4(int[] array) {
+        int n = array.length - 1;
+        while (true) {
+            int last = 0;
+            for (int i = 0; i < n; i++) {
+                if (array[i] > array[i + 1]) {
+                    swap(array, i + 1, i);
+                    last = i;
+                    System.out.println(Arrays.toString(array));
+                }
+            }
+            n = last;
+            if (n == 0) {
+                break;
+            }
         }
     }
 
